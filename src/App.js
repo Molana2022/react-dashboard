@@ -1,21 +1,23 @@
-import React from "react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Layout from "./layout/Layout";
 import Dashboard from "./pages/Dashboard";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 
 
 function App() {
   return (
-    <div style={{ display: "flex" }}>
-      <Sidebar />
-
-      <div style={{ flex: 1 }}>
-        <Header />
-        <div style={{ padding: "20px" }}>
-          <Dashboard />
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          {/* Main page */}
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 

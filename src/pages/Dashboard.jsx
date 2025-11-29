@@ -1,7 +1,6 @@
-import React from "react";
 import useFetch from "../hooks/useFetch";
 import Card from "../components/Card";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   const { data, loading, error } = useFetch(
